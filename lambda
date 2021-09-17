@@ -1,0 +1,15 @@
+import json
+import boto3
+from boto3.dynamodb.conditions import Key
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('places')
+
+def achapizzaria(distance):
+  response=table.get_item(Key={'distance': distance}) 
+  if 'Item' in response:
+    return{'fulfillmentText' : response['Item']['place']} 
+  else:
+    return{'fulfillmentText' : 'Nao tem pizzaria'}
+def lambda_handler(event, context):
+   distance=event['distancia'] 
+   return achapizzaria(int(distance))
