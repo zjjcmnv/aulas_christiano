@@ -9,7 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: |
-          sudo apt-get install nginx -y
-          sudo systemctl start nginx
-      - run: systemctl status nginx
-      - run: curl -v localhost:80
+          sh ./script.sh
