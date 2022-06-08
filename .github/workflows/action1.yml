@@ -1,12 +1,12 @@
 name: action1
 on: [push]
 jobs:
-  check-bats-version:
+  install-nginx:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: ls -lhaS
+      - run: apt-get install nginx -y 
+      - run: systemctl nginx status
