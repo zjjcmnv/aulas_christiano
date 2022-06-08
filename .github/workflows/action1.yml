@@ -8,5 +8,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: apt-get install nginx -y 
+      - run: sudo apt-get install nginx -y 
       - run: systemctl nginx status
