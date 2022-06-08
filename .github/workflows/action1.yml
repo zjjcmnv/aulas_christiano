@@ -12,3 +12,4 @@ jobs:
           sudo apt-get install nginx -y
           sudo systemctl start nginx
       - run: systemctl status nginx
+      - run: curl -v localhost:80
