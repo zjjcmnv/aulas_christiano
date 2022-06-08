@@ -9,4 +9,4 @@ jobs:
         with:
           node-version: '14'
       - run: sudo apt-get install nginx -y 
-      - run: systemctl nginx status
+      - run: systemctl status nginx
