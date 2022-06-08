@@ -13,6 +13,7 @@ def achapizzaria(distance):
 def lambda_handler(event, context):
    distance=event['distancia'] 
    return achapizzaria(int(distance))
+lambda_handler();
    
 
 
